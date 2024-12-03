@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 const isProduction = import.meta.env.MODE === 'production'
+const productionMode = import.meta.env.MODE
 console.log(isProduction)
 </script>
 
@@ -11,8 +12,8 @@ console.log(isProduction)
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-      <p v-if="isProduction">배포</p>
-      <p v-else>개발</p>
+      <p v-if="isProduction">{{ productionMode }}</p>
+      <p v-else>{{ productionMode }}</p>
       <p>{{ apiUrl }}</p>
       <nav>
         <RouterLink to="/">Home</RouterLink>
